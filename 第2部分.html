@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Starter - Bootstrap 5 Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="static/css/bootstrap-5.0.0-alpha-2.min.css">
+<link rel="stylesheet" href="static/css/LineIcons.2.0.css">
+<link rel="stylesheet" href="static/css/tiny-slider.css">
+<link rel="stylesheet" href="static/css/animate.css">
+<link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+
+<div class="preloader">
+<div class="loader">
+<div class="ytp-spinner">
+<div class="ytp-spinner-container">
+<div class="ytp-spinner-rotator">
+<div class="ytp-spinner-left">
+<div class="ytp-spinner-circle"></div>
+</div>
+<div class="ytp-spinner-right">
+<div class="ytp-spinner-circle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<header class="header">
+<div class="navbar-area">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-12">
+<nav class="navbar navbar-expand-lg">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="toggler-icon"></span>
+<span class="toggler-icon"></span>
+<span class="toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+<ul id="nav" class="navbar-nav ml-auto">
+<li class="nav-item">
+  <i class="nav-item"></i><a href="index.html">首页</a>
+</li>
+<li class="nav-item">
+  <i class="nav-item"></i><a href="第2部分.html">客流量</a>
+</li>
+<li class="nav-item">
+  <i class="nav-item"></i><a href="第3部分.html">交通工具</a>
+</li>
+<li class="nav-item">
+  <i class="nav-item"></i><a href="第4部分.html">提前购票</a>
+    </li>
+<li class="nav-item">
+  <i class="nav-item"></i><a href="第5部分.html">购票期</a>
+</li>
+<li class="nav-item">
+  <i class="nav-item"></i><a href="第6部分.html">其他</a>
+  </li>
+</ul>
+</div>
+
+</nav>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+
+
+<section id="第2部分.html" class="第2部分.html-section img-bg pt-120 pb-70 mt-120">
+  <div class="section-title text-center mb-60">
+    <h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">客流量</h1>
+    </div>
+<div class="con left" style="width:100%;">
+<body style="height: 400%; margin: 50px">
+  <div id="container" style="height: 400%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+<script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: '2022与2021春运客流量走势对比'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {},
+  toolbox: {
+    show: true,
+    feature: {
+      dataZoom: {
+        yAxisIndex: 'none'
+      },
+      dataView: { readOnly: false },
+      magicType: { type: ['line', 'bar'] },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Day1', 'Day2', 'Day3', 'Day4', 'Day5', 'Day6', 'Day7']
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: '{value} 万'
+    }
+  },
+  series: [
+    {
+      name: '2022年',
+      type: 'line',
+      data: [2500, 2700, 2600, 3000, 3400, 3300, 3200],
+      markPoint: {
+        data: [
+          { type: 'max', name: 'Max' },
+          { type: 'min', name: 'Min' }
+        ]
+      },
+      markLine: {
+        data: [{ type: 'average', name: 'Avg' }]
+      }
+    },
+    {
+      name: '2021年',
+      type: 'line',
+      data: [1800, 1600, 1500, 1700, 1850, 1700, 1780],
+      markPoint: {
+        data: [{ name: '周最低', value: -2, xAxis: 1, yAxis: -1.5 }]
+      },
+      markLine: {
+        data: [
+          { type: 'average', name: 'Avg' },
+          [
+            {
+              symbol: 'none',
+              x: '90%',
+              yAxis: 'max'
+            },
+            {
+              symbol: 'circle',
+              label: {
+                position: 'start',
+                formatter: 'Max'
+              },
+              type: 'max',
+              name: '最高点'
+            }
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+<ml>
+
+
+</div>
+</section>
+
+
+
+<a href="#" class="scroll-top btn-hover">
+<i class="lni lni-chevron-up"></i>
+</a>
+
+<script data-cfasync="false" src="static/js/email-decode.min.js"></script><script src="static/js/bootstrap.5.0.0.alpha-2-min.js"></script>
+<script src="static/js/count-up.min.js"></script>
+<script src="static/js/tiny-slider.js"></script>
+<script src="static/js/imageloaded.min.js"></script>
+<script src="static/js/isotope.min.js"></script>
+<script src="static/js/wow.min.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+</html>
